@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ServiceNow Test Action Report
-        uses: DeepakJanmanchi/servicenow-devops-test-report@v1.34.2
+        uses: DeepakJanmanchi/servicenow-devops-test-report@main
         with:
           devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
           devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
