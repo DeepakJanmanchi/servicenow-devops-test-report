@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:ServiceNow/servicenow-devops-test-report.git"
+    "url": "git+ssh://git@github.com:DeepakJanmanchi/servicenow-devops-test-report.git"
   },
   "keywords": [
     "devops",
@@ -19,9 +19,9 @@
   "author": "ServiceNow",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ServiceNow/servicenow-devops-test-report/issues"
+    "url": "https://github.com/DeepakJanmanchi/servicenow-devops-test-report/issues"
   },
-  "homepage": "https://github.com/ServiceNow/servicenow-devops-test-report#readme",
+  "homepage": "https://github.com/DeepakJanmanchi/servicenow-devops-test-report#readme",
   "dependencies": {
     "@actions/core": "^1.8.2",
     "axios": "^0.25.0",
