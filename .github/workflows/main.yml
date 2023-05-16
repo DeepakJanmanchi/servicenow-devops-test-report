@@ -1,5 +1,10 @@
-name: SonarActionGetWorkflow
-on: 
+name: DeepakSonar
+    
+on:
+#   push:
+#     branches: ['master']
+#   pull_request:
+#     branches: ['master']
   workflow_dispatch:
 
 jobs:
@@ -7,8 +12,19 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      
+      - name: Setup JDK 11 for Sonar Cloud
+        uses: actions/setup-java@v1
+        with:
+            java-version: 11
+      
+      - name: Maven Build
+        run: mvn clean install -DskipTests=true
+        
+            
       - name: ServiceNow Test Action Report
         uses: DeepakJanmanchi/servicenow-devops-test-report@main
         with:
@@ -19,4 +35,4 @@ jobs:
           tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
           context-github: ${{ toJSON(github) }}
           job-name: 'Build'
-          xml-report-filename: testngresults.xml 
+          xml-report-filename: target/surefire-reports/testng-results.xml
